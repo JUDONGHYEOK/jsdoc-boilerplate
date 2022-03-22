@@ -1,52 +1,28 @@
 /**
- * Represents a book.
  * @constructor
- * @param {string} title - The title of the book.
- * @param {string} author - The author of the book.
+ * @param {Object[]} drinkList - [{drink, quantity}, ... ]
+ * @example [{new Drink('hotAmericano', 900), 3}]
  */
-function VendingMachine(title, author) {}
+function VendingMachine(drinkList) {}
 
 /**
- * Both of these will link to the bar function.
- * @see {@link bar}
- * @see bar
+ * @param {number} price - input coin amount
+ * @description 가격이 같은 음료수를 선택해서 구매한다.
+ * @example === 아이스 아메리카노(1/10개)를 1000원에 구매했습니다. ===
  */
-function foo() {}
-
-// Use the inline {@link} tag to include a link within a free-form description.
-/**
- * @see {@link foo} for further information.
- * @see {@link http://github.com|GitHub}
- */
-function bar() {}
+VendingMachine.prototype.getItem = function (price) {}; // console.log
 
 /**
- * Generic dairy product.
- * @abstract
+ * @param {Drink} drink - drink itself.
+ * @param {number} quantity - The quantity of the drink.
+ * @description 음료수와 개수를 자판기에 추가한다.
+ */
+VendingMachine.prototype.addItem = function (drink, quantity) {};
+
+/**
+ * Drink
  * @constructor
+ * @param {string} name - The name of the drink.
+ * @param {number} price - The price of the drink.
  */
-function DairyProduct() {}
-
-/**
- * Check whether the dairy product is solid at room temperature.
- * @abstract
- * @return {boolean}
- */
-DairyProduct.prototype.isSolid = function () {
-  throw new Error("must be implemented by subclass!");
-};
-
-/**
- * Cool, refreshing milk.
- * @constructor
- * @augments DairyProduct
- */
-function Milk() {}
-
-/**
- * Check whether milk is solid at room temperature.
- * @return {boolean} Always returns false.
- */
-Milk.prototype.isSolid = function () {
-  return false;
-};
+function Drink(name, price) {}
