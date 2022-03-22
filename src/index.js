@@ -4,7 +4,7 @@
  * @param {string} title - The title of the book.
  * @param {string} author - The author of the book.
  */
-function Book(title, author) {}
+function VendingMachine(title, author) {}
 
 /**
  * Both of these will link to the bar function.
@@ -22,6 +22,7 @@ function bar() {}
 
 /**
  * Generic dairy product.
+ * @abstract
  * @constructor
  */
 function DairyProduct() {}
